@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #080c14;
+  --surface: #0e1520;
+  --surface2: #141e2e;
+  --border: #1e2d42;
+  --text: #e2eaf6;
+  --muted: #5a7296;
+  --accent: #3b82f6;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+
+body { font-family: 'Instrument Sans', sans-serif; }
+h1, h2, h3, .font-display { font-family: 'Syne', sans-serif; }
+.font-mono, code { font-family: 'IBM Plex Mono', monospace; }
+
+/* Emoji rendering — force colour emoji on all platforms */
+.emoji, .flag-emoji {
+  font-family: 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', 'Twemoji Mozilla', sans-serif;
+  font-style: normal;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+.sdg-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.stream-text { white-space: pre-wrap; line-height: 1.7; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+.loading-dot { animation: pulse-dot 1.2s ease-in-out infinite; }
